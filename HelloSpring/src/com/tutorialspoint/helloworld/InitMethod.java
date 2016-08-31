@@ -1,4 +1,4 @@
-package com.tutorialspoint;
+package com.tutorialspoint.helloworld;
 
 public class InitMethod {
 	private String message;
