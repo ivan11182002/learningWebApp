@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
+		<property name="message" value="Hello World!" />
+	</bean>
+	<!-- lazy-init: IoC container啟動時，不會預先實體化，而是需要用到時才實體化 -->
+	<bean id="lazyInit" class="com.tutorialspoint.LazyInit" lazy-init="true">
+		<property name="message" value="Lazy Init!" />
+	</bean>
+	<!-- init-method: 在 -->
+	<bean id="initMethod" class="com.tutorialspoint.InitMethod" init-method="initMethod">
+		<property name="message" value="Init Method!" />
+	</bean>
+	<bean id="destroyMehtod" class="com.tutorialspoint.DestroyMethod" destroy-method="destroyMethod">
+		<property name="message" value="Destroy Method!" />
+	</bean>
+</beans>
