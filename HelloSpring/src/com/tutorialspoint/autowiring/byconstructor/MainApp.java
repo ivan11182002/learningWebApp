@@ -1,4 +1,4 @@
-package com.tutorialspoint.helloworld;
+package com.tutorialspoint.autowiring.byconstructor;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -6,11 +6,12 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		TextEditor te = (TextEditor)context.getBean("awTextEditorByConstructor");
 		
-		HelloWorld obj = (HelloWorld)context.getBean("helloWorld");
-		obj.getMessage();
+		System.out.println("=== auto wiring by constructor ===");
 		
-		context.registerShutdownHook();
+		te.getName();
+		te.spellCheck();
 		
 		context.close();
 	}

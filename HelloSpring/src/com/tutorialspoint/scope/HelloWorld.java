@@ -1,6 +1,6 @@
-package com.tutorialspoint.helloworld;
+package com.tutorialspoint.scope;
 
-public class DestroyMethod {
+public class HelloWorld {
 	private String message;
 
 	public void getMessage() {
@@ -11,7 +11,4 @@ public class DestroyMethod {
 		this.message = message;
 	}
 	
-	public void destroyMethod() {
-		System.out.println("In DestroyMethod >>> destroyMethod()");;
-	}
 }

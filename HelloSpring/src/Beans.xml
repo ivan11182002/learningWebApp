@@ -3,22 +3,118 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
-
-	<bean id="helloWorld" class="com.tutorialspoint.HelloWorld">
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"
+    default-init-method="defaultInit"
+    default-destroy-method="defaultDestroy">
+	
+	<!-- helloworld -->
+	<!-- lazy-init: IoC container啟動時，不會預先實體化，而是需要用到時才實體化 -->
+	<bean id="helloWorld" class="com.tutorialspoint.helloworld.HelloWorld">
 		<property name="message" value="Hello World!" />
 	</bean>
 	
-	<!-- lazy-init: IoC container啟動時，不會預先實體化，而是需要用到時才實體化 -->
-	<bean id="lazyInit" class="com.tutorialspoint.LazyInit" lazy-init="true">
-		<property name="message" value="Lazy Init!" />
+	
+	<!-- scope -->
+	<bean id="singleton" class="com.tutorialspoint.scope.HelloWorld" scope="singleton">
+		<property name="message" value="I'm singleton Object ?" />
+	</bean>
+	<bean id="prototype" class="com.tutorialspoint.scope.HelloWorld" scope="prototype">
+		<property name="message" value="I'm prototype Object ?" />
 	</bean>
 	
-	<bean id="initMethod" class="com.tutorialspoint.InitMethod" init-method="initMethod">
-		<property name="message" value="Init Method!" />
+	<!-- lifecycle -->
+	<bean id="lifecycle" class="com.tutorialspoint.lifecycle.HelloWorld"
+		  lazy-init="true"
+		  init-method="init"
+		  destroy-method="destroy">
+		<property name="message" value="Hello Lifecycle" />
+	</bean>
+	<bean id="lifecycle2" class="com.tutorialspoint.lifecycle.HelloWorld2" lazy-init="true">
+		<property name="message" value="Hello Lifecycle2" />
 	</bean>
 	
-	<bean id="destroyMehtod" class="com.tutorialspoint.DestroyMethod" destroy-method="destroyMethod">
-		<property name="message" value="Destroy Method!" />
+	<!-- inheritance -->
+	<bean id="inheritParent" class="com.tutorialspoint.inheritance.HelloWorld">
+		<property name="message1" value="Hello World!"></property>
+		<property name="message2" value="Hello World2!"></property>
+	</bean>
+	<bean id="inheritChild" class="com.tutorialspoint.inheritance.HelloIndia" parent="inheritParent">
+		<property name="message1" value="Hello India!"></property>
+		<property name="message3" value="Hello India3!"></property>
+	</bean>
+	
+	<!-- inheritance2 -->
+	<bean id="inherit2Parent" abstract="true">
+		<property name="message1" value="Hello World!"></property>
+		<property name="message2" value="Hello World2!"></property>
+		<property name="message3" value="Hello World3!"></property>
+	</bean>
+	<bean id="inherit2Child" class="com.tutorialspoint.inheritance2.HelloIndia" parent="inherit2Parent">
+		<property name="message1" value="Hello India!"></property>
+		<property name="message3" value="Hello India3!"></property>
+	</bean>
+	
+	<!-- Class-Constructor Dependency -->
+	<bean id="ccTextEditor" class="com.tutorialspoint.di.constructor.TextEditor" scope="prototype">
+		<constructor-arg ref="spellChecker" />
+	</bean>
+	
+	<!-- setter Dependency -->
+	<bean id="setTextEditor" class="com.tutorialspoint.di.setter.TextEditor" scope="prototype">
+<!-- 		<property name="spellChecker" ref="spellChecker" /> -->
+		<property name="spellChecker">
+			<bean id="innerSpellChecker" class="com.tutorialspoint.di.SpellChecker" />
+		</property>
+	</bean>
+	
+	<!-- Auto Wiring by Name -->
+	<bean id="awTextEditorByName" class="com.tutorialspoint.autowiring.byname.TextEditor" autowire="byName">
+		<property name="name" value="Ivan"></property>
+	</bean>
+	<!-- Auto Wiring by Type -->
+	<bean id="awTextEditorByType" class="com.tutorialspoint.autowiring.bytype.TextEditor" autowire="byType">
+		<property name="name" value="Ivan"></property>
+	</bean>
+	<!-- Auto Wiring by Constructor -->
+	<bean id="awTextEditorByConstructor" class="com.tutorialspoint.autowiring.byconstructor.TextEditor" autowire="constructor">
+		<constructor-arg><value>Ivan</value></constructor-arg>
+	</bean>
+	
+	<bean id="spellChecker" class="com.tutorialspoint.di.SpellChecker" />
+	
+	<!-- DI Collection -->
+	<bean id="javaCollection" class="com.tutorialspoint.di.collection.JavaCollection">
+		<property name="addrList">
+			<list>
+				<value>INDIA</value>
+				<value>RUSSIA</value>
+				<value>JAPAN</value>
+				<value>KOREA</value>
+			</list>
+		</property>
+		<property name="addrSet">
+			<set>
+				<value>INDIA</value>
+				<value>RUSSIA</value>
+				<value>JAPAN</value>
+				<value>KOREA</value>
+			</set>
+		</property>
+		<property name="addrMap">
+			<map>
+				<entry key="1" value="INDIA" />
+				<entry key="2" value="RUSSIA" />
+				<entry key="3" value="JAPAN" />
+				<entry key="4" value="KOREA" />
+			</map>
+		</property>
+		<property name="addrProp">
+			<props>
+				<prop key="one">INDIA</prop>
+				<prop key="two">RUSSIA</prop>
+				<prop key="three">JAPAN</prop>
+				<prop key="four">KOREA</prop>
+			</props>
+		</property>
 	</bean>
 </beans>
