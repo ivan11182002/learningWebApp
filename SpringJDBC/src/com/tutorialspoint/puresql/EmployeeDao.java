@@ -1,7 +1,9 @@
-package com.tutorialspoint;
+package com.tutorialspoint.puresql;
 
 import java.util.List;
 import java.util.Map;
+
+import com.tutorialspoint.Employee;
 
 public interface EmployeeDao {
 	public List<Map<String,Object>> query();

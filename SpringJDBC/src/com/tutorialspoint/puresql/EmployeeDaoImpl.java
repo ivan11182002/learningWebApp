@@ -1,7 +1,6 @@
-package com.tutorialspoint;
+package com.tutorialspoint.puresql;
 
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
@@ -11,7 +10,9 @@ import javax.sql.DataSource;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementSetter;
-import org.springframework.jdbc.core.RowMapper;
+
+import com.tutorialspoint.Employee;
+import com.tutorialspoint.EmployeeRowMapper;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 	private DataSource dataSource;

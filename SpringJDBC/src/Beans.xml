@@ -15,9 +15,11 @@
 		<property name="connectionCachingEnabled" value="true"/>
 	</bean>
 	
-	<bean id="empDao" class="com.tutorialspoint.EmployeeDaoImpl">
+	<bean id="empDao" class="com.tutorialspoint.puresql.EmployeeDaoImpl">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
+	
+	<bean id="empCallDao" class="com.tutorialspoint.callprocedure.EmpDaoImpl" autowire="byType" />
 	
 	<context:property-placeholder location="classpath:jdbc.properties"/>
 </beans>

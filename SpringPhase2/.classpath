@@ -23,5 +23,6 @@
 	<classpathentry kind="lib" path="C:/Users/Ivan-Bootcam/Downloads/Learning/Spring-framwork/springLib/libs/main/spring-webmvc-4.3.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Ivan-Bootcam/Downloads/Learning/Spring-framwork/springLib/libs/main/spring-webmvc-portlet-4.3.2.RELEASE.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Ivan-Bootcam/Downloads/Learning/Spring-framwork/springLib/libs/main/spring-websocket-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ivan-Bootcam/Downloads/Learning/common-libs/junit-4.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

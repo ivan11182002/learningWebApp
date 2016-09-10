@@ -1,9 +1,11 @@
-package com.tutorialspoint;
+package com.tutorialspoint.puresql;
 
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.tutorialspoint.Employee;
 
 public class MainApp {
 
@@ -17,12 +19,12 @@ public class MainApp {
 		emp.setJob("PG");
 		
 		//do insert
-//		int iFlag = empDao.insert(emp);
-//		if(iFlag > 0){
-//			System.out.println("insert Success!" );
-//		}else{
-//			System.out.println("insert Failed!" );
-//		}
+		int iFlag = empDao.insert(emp);
+		if(iFlag > 0){
+			System.out.println("insert Success!" );
+		}else{
+			System.out.println("insert Failed!" );
+		}
 		
 		//do query
 		List<Map<String,Object>> query = empDao.query();
