@@ -1,0 +1,10 @@
+[ERROR] 2016-09-12 18:12:24.174 [main] Log4J2PropertiesConf - This is an error message
+[FATAL] 2016-09-12 18:12:24.174 [main] Log4J2PropertiesConf - This is a fatal message
+[ERROR] 2016-09-12 18:28:32.030 [main] Log4J2PropertiesConf - This is an error message
+[FATAL] 2016-09-12 18:28:32.030 [main] Log4J2PropertiesConf - This is a fatal message
+[ERROR] 2016-09-12 18:28:57.508 [main] Log4J2PropertiesConf - This is an error message
+[FATAL] 2016-09-12 18:28:57.508 [main] Log4J2PropertiesConf - This is a fatal message
+[ERROR] 2016-09-12 18:30:49.122 [main] Log4J2PropertiesConf - This is an error message
+[FATAL] 2016-09-12 18:30:49.122 [main] Log4J2PropertiesConf - This is a fatal message
+[ERROR] 2016-09-12 18:32:41.128 [main] Log4J2PropertiesConf - This is an error message
+[FATAL] 2016-09-12 18:32:41.128 [main] Log4J2PropertiesConf - This is a fatal message

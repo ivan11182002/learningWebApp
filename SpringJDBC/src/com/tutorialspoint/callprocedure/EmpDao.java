@@ -1,7 +1,5 @@
 package com.tutorialspoint.callprocedure;
 
-import java.util.List;
-
 import javax.sql.DataSource;
 
 import com.tutorialspoint.Employee;

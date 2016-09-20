@@ -1,0 +1,2 @@
+In this case, I just use "SPRING INITIALIZR" tool where url is "http://start.spring.io/" for auto generating maven project.
+The only thing I cared about is create my codes and run. Dependency will download depend on the settings in pom.xml file which in the .zip file you just download.
